@@ -1,0 +1,10 @@
+body,
+html {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+html {
+  box-sizing: border-box;
+  padding: 20px;
+}
