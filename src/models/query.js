@@ -1,9 +1,9 @@
 const axios = require("axios")
-const API_URL = require("../lib/config").API_URL
+const { CONFIG } = require("../lib/config")
 
 module.exports = (query, route) =>
   axios({
-    url: API_URL,
+    url: CONFIG.API_URL,
     method: "POST",
     data: { query }
   }).then(result => {
