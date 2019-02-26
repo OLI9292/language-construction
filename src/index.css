@@ -7,4 +7,47 @@ html {
 html {
   box-sizing: border-box;
   padding: 20px;
+  font-family: AveriaLight;
+}
+
+@font-face {
+  font-family: AveriaBold;
+  src: url("assets/fonts/AveriaSerif-Bold.ttf");
+}
+
+@font-face {
+  font-family: Averia;
+  src: url("assets/fonts/AveriaSerif-Regular.ttf");
+}
+
+@font-face {
+  font-family: AveriaLight;
+  src: url("assets/fonts/AveriaSerif-Light.ttf");
+}
+
+@font-face {
+  font-family: AveriaItalic;
+  src: url("assets/fonts/AveriaSerif-Italic.ttf");
+}
+
+button {
+  font-family: Averia;
+  font-size: 1em;
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+  outline: none;
+}
+
+button:hover {
+  border: 1px solid blue;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: 1px;
 }

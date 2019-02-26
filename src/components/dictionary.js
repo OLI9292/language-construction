@@ -26,13 +26,17 @@ class DictionaryComponent extends Component {
   render() {
     const { json, id } = this.state
 
+    // onAdd={this.handleAdd.bind(this)}
+    // onEdit={this.handleEdit.bind(this)}
+    // onDelete={this.handleDelete.bind(this)}
+
     return (
       <div style={{ marginBottom: "50px" }}>
-        <p>{id}</p>
+        <h3>{id}</h3>
         <ReactJson
-          onAdd={this.handleAdd.bind(this)}
-          onEdit={this.handleEdit.bind(this)}
-          onDelete={this.handleDelete.bind(this)}
+          displayObjectSize={false}
+          displayDataTypes={false}
+          enableClipboard={false}
           src={json}
         />
       </div>

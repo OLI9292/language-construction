@@ -7,10 +7,11 @@ module.exports = (query, route) =>
     method: "POST",
     data: { query }
   }).then(result => {
-    if (result.data.data.error) {
-      console.log("ERR:", result.data.data.error)
+    const data = result.data.data
+    if (data.error) {
+      console.log("ERR:", data.error)
       return
     }
-    console.log(route, result.data.data)
-    return result.data.data[route]
+    if (data[route]) return data[route]
+    return data
   })

@@ -1,7 +1,14 @@
 import query from "./query"
 
-export const getClauses = (template, tense) =>
+export const getClauses = (languageId, template, tense, number) =>
   query(
-    `query { clauses(template: "${template}", tense: "${tense}") }`,
+    `query {
+      clauses(
+        languageId: ${languageId},
+        template: "${template}",
+        tense: "${tense}",
+        number: "${number}"
+      )
+    }`,
     "clauses"
   )
