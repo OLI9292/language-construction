@@ -1,6 +1,6 @@
-import { compact, toString, sortBy } from "lodash"
-
 import React, { Component } from "react"
+import { compact, toString, sortBy } from "lodash"
+import ReactJson from "react-json-view"
 
 import TextButton from "./common/textButton"
 
@@ -23,21 +23,34 @@ class EditMorpheme extends Component {
   render() {
     const { morpheme, inContext, derivations, languages } = this.props
 
+    const attrComponent = attr => {
+      if (morpheme[attr] === null) return null
+      if (attr === "irregular") {
+        return (
+          <div style={{ display: "flex" }} key={attr}>
+            <p style={{ margin: "0 10px 0 0" }}>{attr}:</p>
+            <ReactJson
+              displayObjectSize={false}
+              displayDataTypes={false}
+              enableClipboard={false}
+              src={JSON.parse(morpheme[attr])}
+            />
+          </div>
+        )
+      }
+      return (
+        <p key={attr}>
+          {attr}: {toString(morpheme[attr])}
+        </p>
+      )
+    }
+
     return (
       <div style={{ flex: 1, borderLeft: "1px solid #ccc" }}>
         <div style={{ marginLeft: "20px" }}>
           <h3>{morpheme.value.toUpperCase()}</h3>
 
-          {compact(
-            attrs.map(
-              attr =>
-                morpheme[attr] != null && (
-                  <p key={attr}>
-                    {attr}: {toString(morpheme[attr])}
-                  </p>
-                )
-            )
-          )}
+          {compact(attrs.map(attrComponent))}
 
           {derivations && (
             <div>
