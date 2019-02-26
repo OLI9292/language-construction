@@ -1,5 +1,5 @@
 const axios = require("axios")
-const API_URL = "http://localhost:5000/graphql"
+const API_URL = require("../lib/config").API_URL
 
 module.exports = (query, route) =>
   axios({
