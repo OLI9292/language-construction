@@ -10,9 +10,9 @@ const numbers = ["random", "singular", "plural"]
 
 const DEFAULTS = true
   ? {
-      template: "SVO",
-      tense: "future",
-      number: "singular"
+      template: "random",
+      tense: "random",
+      number: "random"
     }
   : {}
 

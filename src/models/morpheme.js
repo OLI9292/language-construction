@@ -1,7 +1,7 @@
 import query from "./query"
 
 const morphemeAttrs =
-  "id value animacy free copula person transitive intransitive irregular grammar languageId dictionaryId"
+  "id value animacy free nounAttributes blacklist person transitive intransitive irregular grammar languageId dictionaryId"
 
 const wordMorphemeAttrs = "wordId morphemeId value startIndex"
 

@@ -77,7 +77,7 @@ class App extends Component {
           }}
           key={morpheme.id}
         >
-          {morpheme.value}
+          {morpheme.id} {morpheme.value} {morpheme.grammar}
         </TextButton>
       )
     }
